@@ -169,6 +169,7 @@ header .follow a:hover{
     width: 60%;
     margin-left: 10%;
     margin-bottom: 10%;
+    filter:drop-shadow(10px 10px 90px rgb(37, 79, 19));
 }
 .home .content{
     flex: 1 1 40rem;
