@@ -66,9 +66,9 @@ section{
     box-shadow: 0 0 0 #044706;   
 }
 
-.btn:hover{
+/* .btn:hover{
     letter-spacing: .2rem;
-}
+} */
 
 header{
     position: fixed;
