@@ -59,7 +59,7 @@ section{
     font-size: 1.7rem;
     border-radius: 5px;
     box-shadow: 5px 5px 0 #044706;
-    transition: transform 1s, box-shadow 1s;
+    transition: transform 2s, box-shadow 2s;
 }
 .btn:active{
     transform:translateX(5px) translateY(5px);
