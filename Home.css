@@ -22,7 +22,8 @@ html{
 }
 
 body{
-    background: #d7e4c7;
+    /* background: #d7e4c7; */
+    background-color: black;
     padding-left: 30rem;
 }
 
@@ -36,11 +37,11 @@ section{
 .heading{
     font-size: 4rem;
     padding-bottom: 1rem;
-    color: #111;
+    color: var(--main-color);
     text-transform: uppercase;
 }
 .heading span {
-    color: var(--main-color);
+    color: #fff;
     text-transform: uppercase;
 }
 
@@ -51,24 +52,26 @@ section{
 .btn{
     display: inline-block;
     margin-top: 1rem;
-    margin-right: .5rem;
+    margin-right: 1.5rem;
     padding: .8rem 3rem;
     background: var(--main-color);
     color: #fff;
     cursor: pointer;
-    font-size: 1.7rem;
     border-radius: 5px;
+    font-size: 1.7rem;
     box-shadow: 5px 5px 0 #044706;
     transition: transform 0.05s, box-shadow 0.05s;
 }
 .btn:active{
     transform:translateX(5px) translateY(5px);
-    box-shadow: 0 0 0 #044706;   
+    box-shadow: 0 0 0 #044706;
 }
+.btn:hover{
 
-/* .btn:hover{
-    letter-spacing: .2rem;
-} */
+ /* background: #111; */
+    /* letter-spacing: .2rem; */
+    transform: scale(1.1);
+}
 
 header{
     position: fixed;
@@ -109,10 +112,13 @@ header .follow a{
     font-size: 2.5rem;
     color: #fff;
     margin: 0.7rem;
+    display: inline-block;
+    transition: transform 1s ease;
 }
 
 header .follow a:hover{
     color: var(--main-color);
+    transform: scale(2);
 }
 
 #menu-bars{
@@ -171,6 +177,7 @@ header .follow a:hover{
 
 .home .image{
     flex: 1 1 50rem;
+    animation: scaleImage 5s linear infinite;
 }
 
 .home .image img{
@@ -179,6 +186,28 @@ header .follow a:hover{
     margin-bottom: 10%;
     filter:drop-shadow(10px 10px 90px rgb(37, 79, 19));
 }
+
+/* animation on image1 */
+.home .image img{
+    z-index: -9;
+}
+@keyframes scaleImage {
+    0%{
+        transform:scale(1);
+
+    }
+    50%{
+        transform: scale(1.1);
+        filter:drop-shadow(10px 10px 90px rgb(34, 75, 16));
+        
+    }
+    100%{
+        transform: scale(1);
+
+    }
+}
+
+/* animation end on image1 */
 .home .content{
     flex: 1 1 40rem;
     
@@ -191,7 +220,7 @@ header .follow a:hover{
 
 .home .content h3 {
     font-size: 4.5rem;
-    color:#111;
+    color:white;
     text-transform: uppercase;
 }
 .home .content h3 span{
@@ -203,17 +232,17 @@ header .follow a:hover{
 
 .home .content .info{
     font-size: 2.5rem;
-    color: #111;
+    color: white;
     padding: .5rem 0;
 }
 .home .content .info span{
-    color: #111;
+    color: white;
     
 }
 
 .home .content .work{
     font-size: 1.7rem;
-    color: #666;
+    color: #cdcaca;
     padding: .5rem 0;
     text-transform: none;
 }
@@ -239,7 +268,7 @@ header .follow a:hover{
 
 }
 .text.first-text{
-    color: #111;
+    color: white;
     font-size: 2.5rem;
     text-transform: none;
 }
@@ -250,7 +279,8 @@ header .follow a:hover{
     left: 0;
     height: 100%;
     width: 100%;
-    background-color:#d7e4c7;
+    /* background-color:#d7e4c7; */
+    background-color: black;
     border-left: 2px solid #06820a;
     animation: animate 4s steps(12) infinite;
  }
@@ -281,34 +311,42 @@ header .follow a:hover{
 
 .about .row-1 .image{
     flex: 1 1 25rem;
+    cursor: pointer;
 }
 
 .about .row-1 .image img{
+   
     height: 85%;
     width: 85%;
     object-fit: cover;
-    border: 1rem solid #fff;
-    border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+    border: 5px solid transparent;
+    border-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1;
+    /* border: 1rem solid var(--main-color); 
+    border-radius: 51% 49% 51% 49% / 50% 47% 53% 50%; */
 }
+
+/* animation on image 2 */
+
+
+/* animation on image 2 end */
 
 
 .about .row-1 .content{
     flex: 1 1 50rem;
 }
 .about .row-1 .content h3{
-    color: #333;
+    color: gray;
     font-size: 3.5rem;
 }
 .about .row-1 .content p{
-    color: #666;
+    color: #cdcaca;
     font-size: 1.7rem;
     padding: .5rem 0;
     text-transform: none;
 }
 
 .about .row-1 .content p2{
-    color: #666;
+    color: #cdcaca;
     font-size: 1.6rem;
     padding: .5rem 0;
     text-transform: none;
@@ -348,7 +386,7 @@ header .follow a:hover{
     justify-content: space-between;
     padding: .7rem 0;
     font-size: 1.7rem;
-    color: #111;
+    color: white;
     font-weight: 400;
 }
 
@@ -374,34 +412,73 @@ header .follow a:hover{
     width: 75%;
 }
 .about .row-2 .skills .progress:nth-child(3) .bar span{
-    width: 60%;
+    width: 80%;
 }
 .about .row-2 .skills .progress:nth-child(4) .bar span{
-    width: 65%;
+    width: 50%;
 }
-
 
 .about .row-2 .box-container{
     flex: 1 1 40rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    animation: move 5s linear infinite;
+
+    
+    
+  
 }
 
 .about .row-2 .box-container .box{
     flex: 1 1 20rem;
-    background: #fff;
     padding: 2rem;
     border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0, 1);
+    filter:drop-shadow(100px 100px 90px rgb(247, 247, 45));
+    cursor: pointer;
+    border: 5px solid transparent;
+    transition: all 1s ease;
+    border-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1;
 }
 
+.about .row-2 .box-container .box:hover{
+    transform: rotate(360deg);
+}
+
+
+/* box animation start  */
+
+.about .row-2 .box-container .box{
+    z-index: -9;
+}
+@keyframes move {
+    0%{
+        transform:scale(1);
+
+    }
+    50%{
+        transform: scale(1.05);
+        filter:drop-shadow(10px 10px 90px rgba(187, 241, 163, 0.967));
+        background-color: #7ddd8028;
+        
+    }
+    100%{
+        transform: scale(1);
+
+    }
+}
+
+/* box animation end */
+
+
+
+
 .about .row-2 .box-container .box h3{
-    color: var(--main-color);
+    color: white;
     font-size: 3rem;
 }
 .about .row-2 .box-container .box p{
-    color: #666;
+    color: rgb(216, 25, 25);
     font-size: 1.7rem;
     padding-top: .5rem;
 }
@@ -411,10 +488,11 @@ header .follow a:hover{
  
 /* education section start */
 
-/* .education .box-container{
+.education .box-container{
     display: flex;
     flex-wrap: wrap;
-} */
+  
+}
 
 .education .box-container .box{
     position: relative;
@@ -423,6 +501,7 @@ header .follow a:hover{
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
+    cursor: pointer;
 }
 
 .education .box-container .box::before{
@@ -435,11 +514,53 @@ header .follow a:hover{
     background: var(--main-color);
 }
 
+/* transition effect on box */
+
+.education .box-container .box .content::after{
+    content:"";
+    position:absolute;
+    top: 4px;;
+    left: 22.5px;;
+    right:22.5px;
+    bottom: 22.5px;
+    z-index:0;
+}
+.education .box-container .box .content::before{
+    content:"";
+    position:absolute;
+    top: 4px;;
+    left: 22.5px;;
+    right:22.5px;
+    bottom: 22.5px;
+    background: linear-gradient(45deg, #beefa419, #7dcd556b, #7dcd5580);
+    transform:scaleX(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index:1;
+}
+
+.education .box-container .box .content:hover::before{
+    transform: scaleX(1);
+    border: 5px solid transparent;
+    border-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1;
+   
+}
+
+.education .box-container .box:hover{
+    transform: scale(1.1);
+   
+}
+
+
+/* end */
+
+
+
 .education .box-container .box .content{
-    background: #fff;
     padding: 1.5rem;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     border-radius: .5rem;
+    /* border: 5px solid white; */
 }
 
 .education .box-container .box .content span{
@@ -453,7 +574,7 @@ header .follow a:hover{
 .education .box-container .box .content h3{
     font-size: 2.5rem;
     padding: .5rem 0;
-    color: #111;
+    color: white;
 }
 .education .box-container .box .content h1{
     font-size: 2rem;
@@ -462,29 +583,38 @@ header .follow a:hover{
 
 .education .box-container .box .content p{
     font-size: 1.5rem;
-    color: #666;
+    color: #cdcaca;
     text-transform: none;
 }
 
 
 /* education section end */
+
+
+
+
  /* portfolio section start */
 
- .portfolio .box-container{
+
+
+.portfolio .box-container{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    cursor: pointer;
+    
+    
 }
 
-.portfolio .box-container .box{
+.portfolio .box-container .box {
     flex: 1 1 30rem;
     height: 32rem;
     position: relative;
     overflow: hidden;
-    border: 1rem solid #fff;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    background: #fff;
+     box-shadow: 0 .5rem 1rem rgb(216, 25, 25);
     border-radius: .5rem;
+    transition: all 2s;
+      
 }
 
 .portfolio .box-container .box img{
@@ -492,22 +622,55 @@ header .follow a:hover{
     width: 100%;
     object-fit: cover;
     border-radius: .5rem;
-    position: relative;
+    position:relative;
     z-index: 1;
+    transition: all 2s;
+    filter: drop-shadow(10px 10px 90px rgb(216, 25, 25));
 }
 
 .portfolio .box-container .box:hover img{
-    height: 75%;
-    width: 75%;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 100px; 
+    transform:rotate(360deg) perspective(500px) translateZ(-500px); 
+   
+}
+
+.portfolio .box-container .box:hover {
+    transform: scale(1.05);
 }
 
 
+/* animation */
+
+
+/* end */
+
 .portfolio .box-container .box h3{
     position: absolute;
-    bottom: .5rem; left:1rem;
-    font-size: 2.5rem;
-    color:#12cad0;
-    text-transform: uppercase;
+    bottom: 25rem; left:10rem; right: 5rem;
+    font-size: 2rem;
+    /* color:rgba(218, 23, 23, 0.995); */
+    color: yellow;
+    text-transform: uppercase;   
+}
+
+.portfolio .box-container .box h2{
+    position: absolute;
+    bottom: 25rem; left:10rem; right: 8rem;
+    font-size: 1.7rem;
+    color:yellow;
+    text-transform: uppercase;   
+}
+
+
+
+.portfolio .box-container .box p{
+    position: absolute;
+    bottom: 0.5rem; left:1rem;
+    font-size: 1.05rem;
+    color:white;
+    text-transform: uppercase;   
 }
 .portfolio .box-container .box .icons{
     position: absolute;
@@ -524,16 +687,28 @@ header .follow a:hover{
     line-height: 4rem;
     text-align: center;
     margin-bottom: 1rem;
+    transition: all 1s;
 }
 .portfolio .box-container .box .icons a:hover{
     background: var(--main-color);
     color: #fff;
-}
+    transform: scale(1.2);
+} 
+
+
+ 
+
+
 
  /* portfolio section end  */
 
 
 /* contact section start */
+
+
+
+
+
 
 .contact .icons-container{
     display: flex;
@@ -546,10 +721,17 @@ header .follow a:hover{
     flex: 1 1 25rem;
     text-align: center;
     padding: 2rem;
-    background: #fff;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    box-shadow: 0 .5rem 1.5rem rgba(218, 23, 23, 0.995);
     border-radius: .5rem;
+    transition: all 1s;
+    cursor: pointer;
 }
+
+.contact .icons-container .icons:hover{
+    transform: scale(1.05);
+}
+
+
 
 .contact .icons-container .icons i{
     height: 5rem;
@@ -559,15 +741,19 @@ header .follow a:hover{
     background: var(--main-color);
     color: #fff;
     border-radius: 50%;
+    
 }
+
+
+
 .contact .icons-container .icons h3{
-    color: #111;
+    color: white;
     font-size: 2rem;
     padding: .5rem 0;
 }
 
 .contact .icons-container .icons p{
-    color: #666;
+    color: #cdcaca;
     font-size: 1.7rem;
     text-transform: none;
 }
@@ -578,30 +764,37 @@ header .follow a:hover{
     gap: 1.5rem;
 }
 
+
 .contact .row form{
     flex: 1 1 55rem;
-    background: #fff;
+    /* background: #fff; */
     padding: 0 2rem;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    box-shadow: 0 .5rem 5rem rgba(218, 23, 23, 0.995);
     border-radius: .5rem;
+    transition: all 1s;
 }
+.contact .row form:hover{
+    transform: scale(1.05);
+}
+
 
 .contact .row .map{
     flex: 1  1 25rem;
     border: 1rem solid #fff;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    box-shadow: 0 .5rem 1rem rgba(218, 23, 23, 0.995);
     border-radius: .5rem;
     width: 100%;
 }
 .contact .row form .box,
 .contact .row form textarea{
     width: 100%;
-    border-bottom: .1rem solid #333;
-    color: #333;
+    border-bottom: .11rem solid #333;
+    color: white;
     text-transform: none;
     font-size: 1.7rem;
     padding: 1rem 0;
     margin: 1rem 0;
+    background-color: black;
 }
 .contact .row form .box:focus,
 .contact .row form textarea:focus{
